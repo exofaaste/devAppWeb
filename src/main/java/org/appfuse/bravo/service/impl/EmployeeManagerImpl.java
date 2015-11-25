@@ -31,7 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 @Service("employeeManager")
-@WebService(serviceName = "EmployeesService", endpointInterface = "org.appfuse.tutorial.service.EmployeeManager")
+@WebService(serviceName = "EmployeesService", endpointInterface = "org.appfuse.bravo.service.EmployeeManager")
 public class EmployeeManagerImpl extends GenericManagerImpl<Employee, Long> implements EmployeeManager{
      EmployeeDao employeeDao;
     public EmployeeManagerImpl() {

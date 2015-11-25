@@ -10,7 +10,7 @@
 
     <!-- Activates scanning of @Repository and @Service -->
     <context:component-scan base-package="org.appfuse.tutorial"/>
-
+    <context:component-scan base-package="org.bravo"/>
     <!-- Add new DAOs here -->
 
     <!-- Add new Managers here -->

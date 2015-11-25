@@ -31,7 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 @Service("accountManager")
-@WebService(serviceName = "AccountService", endpointInterface = "org.appfuse.tutorial.service.AccountManager")
+@WebService(serviceName = "AccountService", endpointInterface = "org.appfuse.bravo.service.AccountManager")
 public class AccountManagerImpl extends GenericManagerImpl<Account, Long> implements AccountManager{
     AccountDao accountDao;
 

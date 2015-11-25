@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 package org.bravo.dao;
-import java.io.Serializable;
 import java.util.List;
 import org.appfuse.dao.GenericDao;
 import org.appfuse.bravo.model.Food;

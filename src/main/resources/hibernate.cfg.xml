@@ -8,7 +8,7 @@
     <session-factory>
         <mapping class="org.appfuse.model.User"/>
         <mapping class="org.appfuse.model.Role"/>
-        <mapping class="org.appfuse.tutorial.model.Employee"/>
-        <mapping class="org.appfuse.tutorial.model.Account"/>
+        <mapping class="org.appfuse.bravo.model.Employee"/>
+        <mapping class="org.appfuse.bravo.model.Account"/>
     </session-factory>
 </hibernate-configuration>
