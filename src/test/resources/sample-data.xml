@@ -139,4 +139,14 @@
             <value>Active</value>
         </row>
     </table>
+    <table name='Food'>
+        <column>Food_id</column>
+        <column>Food_name</column>
+        <column>Food_description</column>
+        <row>
+            <value>1</value>
+            <value>Cacique</value>
+            <value>Bebida Alcoholica</value>
+        </row>
+    </table>
 </dataset>

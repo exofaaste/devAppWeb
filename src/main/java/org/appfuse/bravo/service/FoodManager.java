@@ -13,21 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.bravo.dao;
+package org.appfuse.bravo.service;
+
+
 import java.util.List;
-import org.appfuse.dao.GenericDao;
+import javax.jws.WebService;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import org.appfuse.service.GenericManager;
 import org.appfuse.bravo.model.Food;
+
 /**
  *
  * @author fabian
  */
-public interface FoodDao extends GenericDao<Food, Long>{
-
+@WebService
+@Path("/food")
+public interface FoodManager extends GenericManager<Food, Long>{
+    
+    @GET
+     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    List<Food> getFood();
+    
     /**
-     *Gets the food by its name
-     * @param foodName
+     *
+     * @param foodId
      * @return
      */
-    public List<Food> findByFoodName(String foodName);
-    public Food get(int food_id);
+    @GET
+    @Path("/foodSearch")
+     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    Food getFood(@QueryParam("foodId") int foodId);
+    
 }

@@ -38,5 +38,10 @@ public class FoodDaoHibernate extends GenericDaoHibernate<Food, Long> implements
     public List<Food> findByFoodName(String foodName) {
     return getSession().createCriteria(Food.class).add(Restrictions.eq("foodName", foodName)).list();
     }
+
+    @Override
+    public Food get(int food_id) {
+        return (Food)getSession().createCriteria(Food.class).add(Restrictions.eq("foodId", food_id)).uniqueResult();
+    }
     
 }

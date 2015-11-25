@@ -10,5 +10,6 @@
         <mapping class="org.appfuse.model.Role"/>
         <mapping class="org.appfuse.bravo.model.Employee"/>
         <mapping class="org.appfuse.bravo.model.Account"/>
+        <mapping class="org.appfuse.bravo.model.Food"/>
     </session-factory>
 </hibernate-configuration>
