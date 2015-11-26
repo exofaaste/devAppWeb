@@ -66,6 +66,7 @@ public class Menu implements Serializable {
      * 
      * @return
      */
+    
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="Food_id")
     public Food getFood() {

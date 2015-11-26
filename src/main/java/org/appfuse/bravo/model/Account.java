@@ -15,12 +15,17 @@
  */
 package org.appfuse.bravo.model;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -38,6 +43,7 @@ public class Account implements Serializable {
     private int attempts;
     private String status;
     private Employee employee;
+    private Set<Food> food = new HashSet<Food>();
     /**
      *UserId
      * @return
@@ -101,6 +107,25 @@ public class Account implements Serializable {
         this.status = status;
     }
 
+    /**
+     *Creates the join table for account requesting for food
+     * @return
+     */
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "Account_Food", joinColumns = { 
+			@JoinColumn(name = "UserId", nullable = false, updatable = false) }, 
+			inverseJoinColumns = { @JoinColumn(name = "Food_id", 
+					nullable = false, updatable = false) })
+    public Set<Food> getFood() {
+        return food;
+    }
+
+    public void setFood(Set<Food> food) {
+        this.food = food;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 7;

@@ -16,7 +16,9 @@
 package org.appfuse.bravo.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,6 +26,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -39,6 +42,7 @@ public class Food implements Serializable {
     private String foodName;
     private String foodDescription;
     private Menu menu;
+    private Set<Account> account= new HashSet<Account>();
 
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -80,6 +84,15 @@ public class Food implements Serializable {
 
     public void setMenu(Menu menu) {
         this.menu = menu;
+    }
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "food")
+    public Set<Account> getAccount() {
+        return account;
+    }
+
+    public void setAccount(Set<Account> account) {
+        this.account = account;
     }
     
     
