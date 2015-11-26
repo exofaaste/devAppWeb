@@ -17,11 +17,14 @@ package org.appfuse.bravo.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 /**
@@ -35,6 +38,7 @@ public class Food implements Serializable {
     private int foodId;
     private String foodName;
     private String foodDescription;
+    private Menu menu;
 
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -64,6 +68,21 @@ public class Food implements Serializable {
     public void setFoodDescription(String foodDescription) {
         this.foodDescription = foodDescription;
     }
+
+    /**
+     *Sets the relation for the multiple menu food dates required
+     * @return
+     */
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "food", cascade = CascadeType.ALL)
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+    
+    
 
     @Override
     public int hashCode() {

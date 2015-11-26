@@ -16,12 +16,16 @@
 package org.appfuse.bravo.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 /**
@@ -37,6 +41,7 @@ public class Employee implements Serializable {
     private String lastName;
     private String email;
     private String active;
+    private Set<Account> account = new HashSet<Account>();
 
     /**
      *employeeID
@@ -110,6 +115,16 @@ public class Employee implements Serializable {
         return "Employee{" + "Employee_id=" + employeeID + ", First_Name=" + firstName + ", Last_Name=" + lastName + ", Email=" + email + ", Active=" + active + '}';
     }
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    public Set<Account> getAccount() {
+        return account;
+    }
+
+    public void setAccount(Set<Account> account) {
+        this.account = account;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;

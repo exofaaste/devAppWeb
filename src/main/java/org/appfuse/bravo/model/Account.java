@@ -18,7 +18,10 @@ import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 /**
@@ -34,7 +37,7 @@ public class Account implements Serializable {
     private int employeeID;
     private int attempts;
     private String status;
-
+    private Employee employee;
     /**
      *UserId
      * @return
@@ -62,17 +65,14 @@ public class Account implements Serializable {
         this.password = password;
     }
 
-    /**
-     *Employee_id
-     * @return
-     */
-    @Column(name="Employee_id")
-    public int getEmployeeID() {
-        return employeeID;
+    @ManyToOne(fetch = FetchType.LAZY)
+   @JoinColumn(name="Employee_id", nullable = false)
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     /**

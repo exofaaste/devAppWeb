@@ -11,5 +11,6 @@
         <mapping class="org.appfuse.bravo.model.Employee"/>
         <mapping class="org.appfuse.bravo.model.Account"/>
         <mapping class="org.appfuse.bravo.model.Food"/>
+        <mapping class="org.appfuse.bravo.model.Menu"/>
     </session-factory>
 </hibernate-configuration>
