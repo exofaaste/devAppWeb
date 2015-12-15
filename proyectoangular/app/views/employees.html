@@ -1,0 +1,6 @@
+﻿<h2>Employees List</h2>
+<div ng-controller="employeesListController">
+    <li ng-repeat="employee in data.employees">
+        <span>ID:{{employee.employeeID}}</span> <span>{{employee.firstName}}</span> <span>{{employee.lastName}}</span> <span>{{employee.email}}</span> <span>{{employee.active}}</span> 
+    </li>
+</div>

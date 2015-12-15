@@ -1,0 +1,12 @@
+﻿<h2>Lista de Candidatos</h2>
+<div ng-controller="candidatesController">
+    <li ng-repeat="candidate in data.candidates">
+        <ul>Id:{{candidate.candidateId}}</ul> 
+		<ul>First name:{{candidate.firstName}}</ul> 
+		<ul>Last name:{{candidate.lastName}}</ul>	
+		<ul ng-repeat="item in candidate.candidateWork">
+			<ul>Company Id:{{item.candidateWorkId}}</ul>
+			<ul>Company name:{{item.company}}</ul>
+		</ul>
+    </li>
+</div>
