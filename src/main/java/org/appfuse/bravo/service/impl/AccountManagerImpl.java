@@ -42,11 +42,16 @@ public class AccountManagerImpl extends GenericManagerImpl<Account, Long> implem
 		super(accountDao);
 		this.accountDao = accountDao;
 	}
-
+    
     @Override
     public List<Account> getAccounts() {
+		return accountDao.getAll();
+	}	
+
+    /*@Override
+    public List<Account> getAccounts() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 
     @Override
     public boolean isValidaAccount(String userId, String password) {

@@ -42,7 +42,7 @@ public class Food implements Serializable {
     private String foodName;
     private String foodDescription;
     private Menu menu;
-    private Set<Account> account= new HashSet<Account>();
+    //private Set<Account> account= new HashSet<Account>();
 
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -86,14 +86,14 @@ public class Food implements Serializable {
         this.menu = menu;
     }
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "food")
+   /* @ManyToMany(fetch = FetchType.LAZY, mappedBy = "food")
     public Set<Account> getAccount() {
         return account;
     }
 
     public void setAccount(Set<Account> account) {
         this.account = account;
-    }
+    }*/
     
     
 

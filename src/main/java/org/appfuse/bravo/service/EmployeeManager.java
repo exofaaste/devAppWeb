@@ -15,7 +15,7 @@
  */
 package org.appfuse.bravo.service;
 
-import java.util.List;
+import java.util.*;
 import javax.jws.WebService;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -30,13 +30,13 @@ import org.appfuse.bravo.model.Employee;
  */
 @WebService
 @Path("/employees")
-public interface EmployeeManager  extends GenericManager<Employee, Long>{
+public interface EmployeeManager extends GenericManager<Employee, Long>{
 
     /**
      *Return request for employees
      * @return
      */
     @GET
-     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     List<Employee> getEmployees();
 }

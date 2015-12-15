@@ -42,7 +42,7 @@ public interface AccountManager extends GenericManager<Account, Long>{
      * @return
      */
     @GET
-     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     List<Account> getAccounts();
     
     /**
@@ -52,8 +52,10 @@ public interface AccountManager extends GenericManager<Account, Long>{
      * @return
      */
     @GET
-    @Path("/isValidAccount")
+    @Path("{userId}/{password}")
+    //@Path("/isValidAccount")
      @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    boolean isValidaAccount(@QueryParam("userId") String userId,@QueryParam("password") String password);
+    //boolean isValidaAccount(@QueryParam("userId") String userId,@QueryParam("password") String password);
+    boolean isValidaAccount(@PathParam("userId") String userId,@PathParam("password") String password);
     
 }

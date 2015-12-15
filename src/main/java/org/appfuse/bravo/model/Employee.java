@@ -41,7 +41,7 @@ public class Employee implements Serializable {
     private String lastName;
     private String email;
     private String active;
-    private Set<Account> account = new HashSet<Account>();
+    //private Set<Account> account = new HashSet<Account>();
 
     /**
      *employeeID
@@ -115,14 +115,14 @@ public class Employee implements Serializable {
         return "Employee{" + "Employee_id=" + employeeID + ", First_Name=" + firstName + ", Last_Name=" + lastName + ", Email=" + email + ", Active=" + active + '}';
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+   /* @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
     public Set<Account> getAccount() {
         return account;
     }
 
     public void setAccount(Set<Account> account) {
         this.account = account;
-    }
+    }*/
 
     
     @Override

@@ -42,8 +42,8 @@ public class Account implements Serializable {
     private int employeeID;
     private int attempts;
     private String status;
-    private Employee employee;
-    private Set<Food> food = new HashSet<Food>();
+    //private Employee employee;
+    //private Set<Food> food = new HashSet<Food>();
     /**
      *UserId
      * @return
@@ -71,15 +71,15 @@ public class Account implements Serializable {
         this.password = password;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-   @JoinColumn(name="Employee_id", nullable = false)
+   /* @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="Employee_id", nullable = false)
     public Employee getEmployee() {
         return employee;
     }
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
-    }
+    }*/
 
     /**
      *Attempts
@@ -111,6 +111,7 @@ public class Account implements Serializable {
      *Creates the join table for account requesting for food
      * @return
      */
+    /*
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinTable(name = "Account_Food", joinColumns = { 
 			@JoinColumn(name = "UserId", nullable = false, updatable = false) }, 
@@ -122,7 +123,7 @@ public class Account implements Serializable {
 
     public void setFood(Set<Food> food) {
         this.food = food;
-    }
+    }*/
 
     
     
