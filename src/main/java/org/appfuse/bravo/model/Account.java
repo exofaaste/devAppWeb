@@ -71,7 +71,7 @@ public class Account implements Serializable {
         this.password = password;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
    @JoinColumn(name="Employee_id", nullable = false)
     public Employee getEmployee() {
         return employee;

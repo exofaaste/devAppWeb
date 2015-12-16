@@ -73,7 +73,7 @@
         <amp.genericCore>true</amp.genericCore>
         <amp.fullSource>false</amp.fullSource>
         <dao.framework>hibernate</dao.framework>
-        <db.name>tutorial_service</db.name>
+        <db.name>food_service</db.name>
         <web.framework>struts</web.framework>
 
         <!-- Framework/Plugin versions -->

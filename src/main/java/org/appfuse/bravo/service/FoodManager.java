@@ -18,7 +18,10 @@ package org.appfuse.bravo.service;
 
 import java.util.List;
 import javax.jws.WebService;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
@@ -47,5 +50,19 @@ public interface FoodManager extends GenericManager<Food, Long>{
     @Path("/foodSearch")
      @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     Food getFood(@QueryParam("foodId") int foodId);
+    
+    /**
+     *Creates a new food in the database
+     * @param foodDescription
+     * @param foodName
+     * @return
+     */
+    
+    
+    @POST
+    @Path("/createFood")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    String createFood(@FormParam("foodDescription") String foodDescription, @FormParam("foodName") String foodName);
     
 }

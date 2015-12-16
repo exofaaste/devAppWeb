@@ -149,4 +149,22 @@
             <value>Bebida Alcoholica</value>
         </row>
     </table>
+    <table name='Account_Food'>
+        <column>UserId</column>
+        <column>Food_id</column>
+        <row>
+            <value>exofaaste</value>
+            <value>1</value>
+        </row>
+    </table>
+    <!--<table name='Menu'>
+        <column>Food_date</column>
+        <column>Date_Number</column>
+        <column>Food_id</column>
+        <row>
+            <value>2015-12-15</value>
+            <value>1</value>
+            <value>1</value>
+        </row>
+    </table> -->
 </dataset>

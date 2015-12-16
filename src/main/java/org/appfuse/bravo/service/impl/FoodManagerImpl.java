@@ -54,5 +54,18 @@ public class FoodManagerImpl extends GenericManagerImpl<Food, Long> implements F
     public Food getFood(int foodId) {
         return foodDao.get(foodId);
     } 
+
+    @Override
+    public String createFood(String foodDescription, String foodName) {
+        Food food = new Food();
+        food.setFoodDescription(foodDescription);
+        food.setFoodName(foodName);
+        try{
+            foodDao.save(food);
+            return "{Food was saved Succesfuly}";
+        }catch(Exception e){
+        return "Error saving the food";
+        }
+    }
     
 }

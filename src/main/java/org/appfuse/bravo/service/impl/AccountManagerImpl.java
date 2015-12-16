@@ -45,7 +45,7 @@ public class AccountManagerImpl extends GenericManagerImpl<Account, Long> implem
 
     @Override
     public List<Account> getAccounts() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return accountDao.getAll(); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
