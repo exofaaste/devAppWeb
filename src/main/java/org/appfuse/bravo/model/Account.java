@@ -42,7 +42,7 @@ public class Account implements Serializable {
     private int employeeID;
     private int attempts;
     private String status;
-    //private Employee employee;
+    private Employee employee;
     //private Set<Food> food = new HashSet<Food>();
     /**
      *UserId
@@ -71,7 +71,7 @@ public class Account implements Serializable {
         this.password = password;
     }
 
-   /* @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="Employee_id", nullable = false)
     public Employee getEmployee() {
         return employee;
@@ -79,7 +79,7 @@ public class Account implements Serializable {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
-    }*/
+    }
 
     /**
      *Attempts

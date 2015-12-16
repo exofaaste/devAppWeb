@@ -42,9 +42,16 @@ public class EmployeeManagerImpl extends GenericManagerImpl<Employee, Long> impl
 		super(employeeDao);
 		this.employeeDao = employeeDao;
 	}
+    
     @Override
     public List<Employee> getEmployees() {
         return employeeDao.getAll();
     }
+    
+    //@Override
+    //public List<Employee> deleteEmployee(Long employeeID) {
+       // employeeDao.remove(employeeID);
+       // return employeeDao.getAll();
+    //}
     
 }

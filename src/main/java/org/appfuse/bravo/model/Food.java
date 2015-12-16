@@ -42,7 +42,7 @@ public class Food implements Serializable {
     private String foodName;
     private String foodDescription;
     private Menu menu;
-    //private Set<Account> account= new HashSet<Account>();
+    private Set<Account> account= new HashSet<Account>();
 
     @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
